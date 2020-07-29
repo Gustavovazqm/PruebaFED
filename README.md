@@ -1,5 +1,5 @@
 # PruebaFED
-Aplication for Front End Developer vacancy job.
+Application for Front End Developer job vacancy. 
 
 ## Angular version
 The version that was used is 10.0.4
