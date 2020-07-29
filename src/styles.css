@@ -77,7 +77,15 @@ button.btn-add:hover{
 }
 
 section.panel-tablausuarios{
-    border: 1px solid rgb(226 225 225);
+    border-right-color: rgb(226, 225, 225);
+    border-right-style: solid;
+    border-right-width: 1px;
+    border-top-color: rgb(226, 225, 225);
+    border-top-style: solid;
+    border-top-width: 1px;
+    border-left-color: rgb(226, 225, 225);
+    border-left-style: solid;
+    border-left-width: 1px;
     background-color: rgb(255 255 255);
     /* display: flex;
     flex-flow: nowrap; */
@@ -196,6 +204,9 @@ input[type=text]#searchUser:focus{
   div.device-content i.active-view{
       color: #fa6a00;
   }
+/* 
+  Esta es la seccion del table vista
+                                     */           
 
   section.section-table{
     border: 1px solid #dad4d4;
@@ -251,19 +262,61 @@ img.user-img{
     width: 100%;
     height: 100%;
 }
+/* ------------------------------- */
+.toggle-status{
+    display: inline-block;
+}
+.switch{
+    height: 14px;
+    width: 35px;
+    display: inline-block;
+    border-radius: 25px;
+    background-color:#e3e3e3;
+   /*  padding: 5px; */
+   /*  box-sizing: border-box; */
+    cursor: pointer;
+    padding: 1px 0;
+   
+}
+input[type="checkbox"].checkboxStatus:checked ~ .switch::before{
+    transform: translateX(17px);    
+}
+input[type="checkbox"].checkboxStatus:checked ~ .switch{
+    background: #677fac;    
+}
+input[type="checkbox"].checkboxStatus{
+    display:none;
+}
+.switch::before{
+    content:"";
+    display: block;
+    width: 16px;
+    height: 16px;
+    background: white;
+    border-radius: 50%;
+    border: 1PX solid #e3e3e3;
+    margin: 1px 0;
+    position: relative;
+    top: -3px;
+    transform: translateX(0);
+    transition: .2s;
+    will-change: transform;
+}
 
- tr div.actions {    
-    display: flex;
+/* ---------------;---------------- */
+ div.actions  {    
+    display: inline-block;
     justify-content: center;
     margin-left: 4rem;
     margin-right: 1rem;
+
 }
-tr div.actions > i.fa-edit{
+ div.actions > i.fa-edit{
     color:#fa6a00;
     margin-right: .5rem;
     font-size: 1.2rem;
 }
-tr div.actions > i.fa-trash-alt{
+ div.actions > i.fa-trash-alt{
     color:#fd5555;
     margin-left: .5rem;
     font-size: 1.2rem;
@@ -273,7 +326,95 @@ tr div.actions:hover{
     display: block;
 } */
 
+/*
+ Esta es la seccion del grid vista
+ */
   
+section.section-grid{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    background-color: rgb(255 255 255);
+    border-right-color: rgb(226, 225, 225);
+    border-right-style: solid;
+    border-right-width: 1px;
+    border-bottom-color: rgb(226, 225, 225);
+    border-bottom-style: solid;
+    border-bottom-width: 1px;
+    border-left-color: rgb(226, 225, 225);
+    border-left-style: solid;
+    border-left-width: 1px;
+    padding: 1.2rem .8rem;
+}
+
+section div.card-user{
+    margin: 1.2rem;    
+    padding: .6rem .6rem 1.2rem .6rem;
+    border: 1px solid #dad4d4;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    min-width: 0;
+    word-wrap: break-word;
+    background-clip: border-box;
+    border-radius: .2rem;
+    
+}
+
+section div.card-user:hover{
+   background-color: #f9f9f9; 
+}
 
 
+div.image-cropper-grid{
+    position: relative;
+    width: 6rem;
+    height: 6rem;
+    overflow: hidden;
+    border-radius: 50%;
+    margin: 0 auto;
+}
 
+section div.card-user div.actions > i.fa-edit {
+    color:#fa680042;
+    margin-right: .5rem;
+    font-size: 1.2rem;
+
+}
+section div.card-user:hover div.actions > i.fa-edit {
+    color:#fa6a00;
+}
+section div.card-user div.actions > i.fa-trash-alt {
+    color:#fd55553f;
+    margin-left: .5rem;
+    font-size: 1.2rem;
+
+}
+section div.card-user:hover div.actions > i.fa-trash-alt {
+    color:#fd5555;
+}
+.card-user > .info-card{
+    text-align: center;
+    text-overflow: ellipsis;
+}
+.card-user > .info-card p.user-adress{
+    width: 250px;
+    padding: 2px 5px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    margin: 0 auto;
+}
+
+.card-user > .bottom-card{
+    border-top-color: rgb(226, 225, 225);
+    border-top-style: solid;
+    border-top-width: 1px;
+    margin: auto 1.3rem;
+    padding: 1rem 0;
+    display: flex;
+    justify-content: space-between;
+}

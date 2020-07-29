@@ -1,1 +1,33 @@
-<p>grid-users works!</p>
+<section class="section-grid">
+    <div class="card-user" *ngFor="let user of usuarios">
+        <div class="head-card">
+            <img src="https://www.gstatic.com/images/icons/material/system/1x/drag_indicator_black_20dp.png">
+            
+            <div class="image-cropper-grid">
+                <img class="user-img" src="{{user.picture}}">
+            </div>
+        </div>
+        <div class="info-card">
+            <h4>{{user.name}} {{user.fathersLastName}}</h4>
+            <p class="user-adress">{{user.email}}</p>
+            <div [ngSwitch]="user.roleId">
+                <p *ngSwitchCase=1>Dueño</p>
+                <p *ngSwitchCase=2>Admin</p>
+                <p *ngSwitchCase=3>Staf</p>
+            </div>
+        </div>
+        <div class="bottom-card">
+            <div class="toggle-status">
+                <input type="checkbox" class="checkboxStatus" name="checkbox" id="checkbox_{{user.name+user.fathersLastName}}" [attr.checked]="user.active ? 'checked' : null">
+                <label class="switch" for="checkbox_{{user.name+user.fathersLastName}}"></label>
+            </div>
+            <div class="actions">
+                <i class="far fa-edit"></i>
+                <i class="fas fa-trash-alt"></i>
+            </div>
+
+        </div>
+    </div>
+
+
+</section>

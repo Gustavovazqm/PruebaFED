@@ -7,13 +7,15 @@ import { AppComponent } from './app.component';
 import { UsersComponent } from './view/users/users.component';
 import { TableUsersComponent } from './view/table-users/table-users.component';
 import { GridUsersComponent } from './view/grid-users/grid-users.component';
+import { ModalComponent } from './modal/modal.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     UsersComponent,
     TableUsersComponent,
-    GridUsersComponent
+    GridUsersComponent,
+    ModalComponent
   ],
   imports: [
     BrowserModule,

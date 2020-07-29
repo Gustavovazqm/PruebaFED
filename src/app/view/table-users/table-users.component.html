@@ -1,5 +1,18 @@
 <section class="section-table">
     <table>
+        <thead>
+            <tr>
+                <th></th>
+                <th>Foto</th>
+                <th>Nombre</th>
+                <th>Apellido paterno</th>
+                <th>Apellido materno</th>
+                <th>Correo</th>
+                <th>Rol</th>
+                <th>Status</th>
+                <th></th>
+            </tr>
+        </thead>
         <tbody>
             <tr *ngFor="let usu of usuarios">
                 <td class="selectDrop">
@@ -30,7 +43,10 @@
                     </div>
                 </td>
                 <td>
-                    {{usu.active}}
+                    <div class="toggle">
+                        <input type="checkbox" class="checkboxStatus" name="checkbox" id="checkbox_{{usu.name+usu.fathersLastName}}" [attr.checked]="usu.active ? 'checked' : null">
+                        <label class="switch" for="checkbox_{{usu.name+usu.fathersLastName}}"></label>
+                    </div>
                 </td>
                 <td >
                     <div class="actions">
