@@ -1,1 +1,279 @@
-/* You can add global styles to this file, and also import other style files */
+/* font-family: 'Roboto', sans-serif; */
+:root{
+    font-size: 14px;
+}
+
+body{
+    padding: 0;
+    margin:0;
+    font-family: 'Roboto', sans-serif;
+    background-color: rgb(247, 247, 247);
+}
+
+div.usuarios-interfaz{
+    margin: 2rem;
+}
+
+section.panel-usuarios{
+    border: 1px solid rgb(226 225 225);
+    background-color: rgb(255 255 255);
+    display: flex;
+    flex-direction: row;
+    padding: 1.7rem;
+}
+
+div.usuarios-text{
+    flex-direction: column;
+    justify-content: center;
+    width: 50%;
+}
+div.usuarios-text p{
+    color: #969696;
+}
+
+div.usuarios-button{
+    width: 50%;
+    flex-direction: row;
+    justify-content: flex-end;
+    display: flex;
+}
+
+div.usuarios-button button{
+    display: inline-block;
+    height: 3rem;
+    outline: 0;
+    margin: auto .8rem;
+    border-radius:.2rem;
+    padding: .4rem 2.2rem;
+    user-select: none;
+    border: 1px solid transparent;
+    cursor: pointer;
+    text-align: center;
+    transition: color .15s ease-in-out,
+    background-color .15s ease-in-out,
+    border-color .15s ease-in-out,
+    box-shadow .15s ease-in-out;
+}
+
+div.usuarios-button .btn-preview{
+    background-color: rgb(255 255 255);
+    color: #fa6a00;
+    border-color: #fa6a00;
+}
+button.btn-preview:hover{
+    background-color: #fa6a00 ;
+    color: rgb(255 255 255) ;
+    border-color: #fa6a00;
+}
+
+div.usuarios-button .btn-add{
+    background-color: #fa6a00;
+    color: rgb(255 255 255);
+    border-color: #fa6a00; 
+}
+button.btn-add:hover{
+    background-color: #c45303 ;
+    border-color: #c45303;
+}
+
+section.panel-tablausuarios{
+    border: 1px solid rgb(226 225 225);
+    background-color: rgb(255 255 255);
+    /* display: flex;
+    flex-flow: nowrap; */
+    display: grid;
+    grid-template-columns: 1fr 1fr auto;
+    margin-top: 1.7rem;
+}
+div.section-search{
+    display:flex;
+    flex-direction: row;
+    padding: 1.3rem 2rem;    
+}
+
+p.wraper{
+    border: 1px solid #dad4d4;
+    background-color: #f9f9f9;
+    border-radius: .2rem;    
+    padding: .8rem 1.8rem .8rem .8rem;
+    margin: 0;
+}
+
+p.wraper:before{
+    font-family: 'FontAwesome';
+    position: relative;
+    content:"\f002";
+    color: #fa6a00;
+    font-size: 1.2rem;
+    margin-right: .9rem;
+}
+
+p.wraper:focus{
+    box-shadow: 0 0 0 0.2rem rgba(0,123,255,.25);
+}
+
+input[type=text]#searchUser{
+    border-color: transparent;
+    position: relative;
+    box-sizing: border-box;
+    background-color:transparent;
+    color: #fa6a00;
+    width: 16rem;
+    cursor: text;
+    text-shadow: none;
+}
+
+input[type=text]#searchUser:focus{
+    outline: 0;
+}
+
+.search-dropmenus{
+    display: flex;
+    flex-direction: row;
+    /* flex-flow: nowrap; */
+    padding: 1.3rem 2rem;
+}
+
+.dropdown-list{
+    position: relative;
+    display: inline-block;
+    margin: 0 .5rem;
+}
+
+.drop-btn {
+    background-color: #f9f9f9;
+    border: 1px solid #dad4d4;
+    padding: 16px;
+    cursor: pointer;
+    outline: 0;
+    border-radius: .2rem;
+}
+
+.drop-btn i{
+    color: #fa6a00;
+    margin: auto .4rem auto 1.3rem;
+}
+
+.content-drop {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+  }
+  .content-drop a{
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;  
+  }
+  .content-drop a:hover{
+    background-color: #f1f1f1 
+  }
+  .dropdown-list:hover .content-drop{
+    display: block;
+  }
+  .dropdown-list:hover .drop-btn{
+    background-color: #cccccc; 
+  }
+
+  div.device-content{
+    display: flex;
+    flex-direction: row;
+    /* flex-flow: nowrap; */
+    padding: 1.3rem 2rem;
+    align-items: center;
+    color:#9c9c9c;
+  }
+
+  div.device-content i{
+    margin: 0 .5rem;
+    font-size: 1.3rem;
+    cursor: pointer;
+  }
+
+  div.device-content i.active-view{
+      color: #fa6a00;
+  }
+
+  section.section-table{
+    border: 1px solid #dad4d4;
+    background-color: rgb(255 255 255);
+  }
+
+  .section-table td.selectDrop{
+    width: 10px;
+    padding-right: 0;
+  }
+
+  .section-table table{
+    width: 100%;
+    max-width: 100%;
+    border-spacing: 0;
+    display: table;
+    border-collapse: collapse;
+  }
+.section-table tr{
+    display: table-row;
+    vertical-align: inherit;
+}
+table > tbody > tr:hover{
+    background-color: #F2F2F2;
+    cursor: pointer;
+} 
+
+.section-table tbody {
+    display: table-row-group;
+    vertical-align: middle;
+}
+
+.section-table table thead th{
+    vertical-align: bottom;
+    border-bottom: 1px solid #dee2e6;
+}
+
+.section-table td, .section-table th {
+    padding: .75rem;
+    border-top: 1px solid #dee2e6;
+    text-align:center
+}
+ .image-cropper{
+    position: relative;
+    width: 3rem;
+    height: 3rem;
+    overflow: hidden;
+    border-radius: 50%;
+    margin: 0 auto;
+}
+
+img.user-img{
+    width: 100%;
+    height: 100%;
+}
+
+ tr div.actions {    
+    display: flex;
+    justify-content: center;
+    margin-left: 4rem;
+    margin-right: 1rem;
+}
+tr div.actions > i.fa-edit{
+    color:#fa6a00;
+    margin-right: .5rem;
+    font-size: 1.2rem;
+}
+tr div.actions > i.fa-trash-alt{
+    color:#fd5555;
+    margin-left: .5rem;
+    font-size: 1.2rem;
+}
+/*
+tr div.actions:hover{
+    display: block;
+} */
+
+  
+
+
+

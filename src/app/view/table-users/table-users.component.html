@@ -1,0 +1,45 @@
+<section class="section-table">
+    <table>
+        <tbody>
+            <tr *ngFor="let usu of usuarios">
+                <td class="selectDrop">
+                    <img src="https://www.gstatic.com/images/icons/material/system/1x/drag_indicator_black_20dp.png">
+                </td>
+                <td>
+                    <div class="image-cropper">
+                        <img class="user-img" src="{{usu.picture}}">
+                    </div>
+                </td>
+                <td>
+                    {{usu.name}}
+                </td>
+                <td>
+                    {{usu.fathersLastName}}
+                </td>
+                <td>
+                    {{usu.mothersLastName}}
+                </td>
+                <td>
+                    {{usu.email}}
+                </td>
+                <td>
+                    <div [ngSwitch]="usu.roleId">
+                        <p *ngSwitchCase=1>Dueño</p>
+                        <p *ngSwitchCase=2>Admin</p>
+                        <p *ngSwitchCase=3>Staf</p>
+                    </div>
+                </td>
+                <td>
+                    {{usu.active}}
+                </td>
+                <td >
+                    <div class="actions">
+                        <i class="far fa-edit"></i>
+                        <i class="fas fa-trash-alt"></i>
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+
+</section>

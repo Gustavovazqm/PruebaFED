@@ -1,0 +1,63 @@
+<div class="usuarios-interfaz">
+    <section class="panel-usuarios">
+        <div class="usuarios-text">
+            <h2>Usuarios</h2>
+            <p> Lorem ipsum dolor sit amet, consectetur adipscing elit.</p>
+        </div>
+        <div class="usuarios-button">
+            <button class="btn-preview">Previsualizar </button>
+            <button class="btn-add"> Agregar nuevo usuario</button>
+        </div>
+    </section>
+
+    <section class="panel-tablausuarios">
+        <div class="section-search">
+            <p class="wraper">
+                Búsqueda
+                <input type="text" name="searchUser" id="searchUser" placeholder="">
+            </p>
+        </div>
+        <div class="search-dropmenus">
+            <div id="sortbyPage" class="dropdown-list">
+                <button class="drop-btn">8 por página <i class="fas fa-chevron-down"></i>
+                </button>
+                <div class="content-drop">
+                    <a href='#'>por 5</a>
+                </div>
+            </div>
+
+            <div id="sortbyAZ" class="dropdown-list">
+                <button class="drop-btn">Ordernar de A - Z<i class="fas fa-chevron-down"></i>
+                </button>
+                <div class="content-drop">
+                    <a href='#'>por 5</a>
+                </div>
+            </div>
+            <div id="sortbyAll" class="dropdown-list">
+                <button class="drop-btn">Todos<i class="fas fa-chevron-down"></i>
+                </button>
+                <div class="content-drop">
+                    <a href='#'>por 5</a>
+                </div>
+            </div>
+
+        </div>
+        <div class="device-content">
+            <i class="fas fa-list" [ngClass]="{'active-view ' : userShowTemplate == 'table'}"
+                (click)="setUserTemplate('table')"></i>
+            <i class="fas fa-th-large" [ngClass]="{'active-view ' : userShowTemplate == 'grid'}"
+                (click)="setUserTemplate('grid')"></i>
+        </div>
+    </section>
+
+    <div *ngIf="userShowTemplate=='table' then templateTable else templateGrid"></div>
+
+    <ng-template #templateTable>
+        <app-table-users></app-table-users>
+    </ng-template>
+    <ng-template #templateGrid>
+        <app-grid-users></app-grid-users>
+    </ng-template>
+
+
+</div>
